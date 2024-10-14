@@ -1,14 +1,14 @@
-import { useState } from "react";
-import jsonBeautify from "json-beautify";
-import { CodeHighlight } from "@douyinfe/semi-ui";
+import { useState } from 'react';
+import jsonBeautify from 'json-beautify';
+import { CodeHighlight } from '@douyinfe/semi-ui';
 import {
   Tabs,
   TabPane,
   Typography,
   RadioGroup,
   Radio,
-} from "@douyinfe/semi-ui";
-import styles from "./App.module.scss";
+} from '@douyinfe/semi-ui';
+import styles from './App.module.scss';
 
 function App() {
   const { Text } = Typography;
@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     // @ts-ignore
     (chrome as any).devtools.network.onRequestFinished.addListener(function (
-      request: any
+      request: any,
     ) {
       setRequestList((prev: any) => [...prev, request]);
     });
@@ -47,10 +47,10 @@ function App() {
                 code={jsonBeautify(item.request.headers, null as any, 2, 100)}
               ></CodeHighlight> */}
               {item.request.headers
-                ?.map?.((item) => {
+                ?.map?.((item: any) => {
                   return [item.name, item.value];
                 })
-                .json("\n")}
+                ?.json('\n')}
               <Text>Response</Text>
               <CodeHighlight
                 code={jsonBeautify(item.response.headers, null as any, 2, 100)}

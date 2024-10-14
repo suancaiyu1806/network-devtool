@@ -1,5 +1,5 @@
 browser.devtools.panels.create(
-  "Example Panel",
+  "network pro",
   "icon/128.png",
   "devtools-panel.html"
 );
